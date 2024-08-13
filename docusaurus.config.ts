@@ -6,19 +6,12 @@ import sidebars from './sidebars';
 const config: Config = {
   title: 'Learnings from Leetcode Solving',
   tagline: 'This would be a repository for future reference of me and others who want to learn DSA and want to look into the thought process that goes into solving problems on leetcode',
-  favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://prakhar-solves-leetcode.vercel.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -46,8 +39,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    
     navbar: {
       title: 'Prakhar Solves Leetcode',
       logo: {
@@ -61,6 +53,15 @@ const config: Config = {
           position: 'left',
           label: 'Solved Problems',
         },
+        { 
+         
+           position: 'left',
+          label: 'Tags',
+          to:'docs/tags'
+        },
+        
+       
+        
       ],
     },
     footer: {

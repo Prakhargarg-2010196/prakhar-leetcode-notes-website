@@ -1,0 +1,104 @@
+arrays:
+  label: "Arrays"
+  permalink: "/arrays"
+  description: "Array data structure"
+
+linked-lists:
+  label: "Linked Lists"
+  permalink: "/linked-lists"
+  description: "Linked list data structure"
+
+stacks:
+  label: "Stacks"
+  permalink: "/stacks"
+  description: "Stack data structure"
+
+queues:
+  label: "Queues"
+  permalink: "/queues"
+  description: "Queue data structure"
+
+trees:
+  label: "Trees"
+  permalink: "/trees"
+  description: "Tree data structure"
+
+graphs:
+  label: "Graphs"
+  permalink: "/graphs"
+  description: "Graph data structure"
+
+hash-tables:
+  label: "Hash Tables"
+  permalink: "/hash-tables"
+  description: "Hash table data structure"
+
+heaps:
+  label: "Heaps"
+  permalink: "/heaps"
+  description: "Heap data structure"
+
+tries:
+  label: "Tries"
+  permalink: "/tries"
+  description: "Trie data structure"
+
+sorting:
+  label: "Sorting"
+  permalink: "/sorting"
+  description: "Sorting algorithms"
+
+searching:
+  label: "Searching"
+  permalink: "/searching"
+  description: "Searching algorithms"
+
+dynamic-programming:
+  label: "Dynamic Programming"
+  permalink: "/dynamic-programming"
+  description: "Dynamic programming techniques"
+
+backtracking:
+  label: "Backtracking"
+  permalink: "/backtracking"
+  description: "Backtracking algorithms"
+
+greedy:
+  label: "Greedy"
+  permalink: "/greedy"
+  description: "Greedy algorithms"
+
+divide-and-conquer:
+  label: "Divide and Conquer"
+  permalink: "/divide-and-conquer"
+  description: "Divide and conquer algorithms"
+
+graph-algorithms:
+  label: "Graph Algorithms"
+  permalink: "/graph-algorithms"
+  description: "Algorithms for graph processing"
+
+string-algorithms:
+  label: "String Algorithms"
+  permalink: "/string-algorithms"
+  description: "Algorithms for string manipulation"
+
+bit-manipulation:
+  label: "Bit Manipulation"
+  permalink: "/bit-manipulation"
+  description: "Algorithms involving bitwise operations"
+
+easy:
+  label: "Easy"
+  permalink: "/easy"
+  description: "Easy level problems"
+
+medium:
+  label: "Medium"
+  permalink: "/medium"
+  description: "Medium level problems"
+
+hard:
+  label: "Hard"
+  permalink: "/hard"
+  description: "Hard level problems"
