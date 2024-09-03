@@ -1,7 +1,6 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import sidebars from './sidebars';
 
 const config: Config = {
   title: 'Learnings from Leetcode Solving',
@@ -81,7 +80,7 @@ const config: Config = {
             },
             {
               label: 'Twitter',
-              href: 'https://x.com/praakhaaar',
+              href: 'https://x.com/prakhargdev',
             },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Prakhar Garg, Built with Docusaurus`,
