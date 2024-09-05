@@ -1,4 +1,4 @@
-
+# Implementation
 [Heap](https://en.wikipedia.org/wiki/Heap_(data_structure))
 
 Heap is implemented as tree data structure which stores the value according to a certain order(max/min) at the root node.

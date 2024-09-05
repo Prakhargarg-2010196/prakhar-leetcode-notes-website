@@ -1,12 +1,12 @@
-# Questions required to be answered before writing a simple implementation of linked list in C++
+# Implementation
 
-## Pre-requistes
+## Pre-requisites
 
 - Do I need a Book to Learn C++?
 - What is a Linked List and What is it used for ?
 - Structured way of writing C++?
 
-## Answers to the pre-requistes
+## Answers to the pre-requisites
 
 Answer 1: Yes and no I do need it as a reference but for learning the concept only complete reading of a big book without any implementation would be a waste of time.But I will surely download a book to learn major concepts.
 

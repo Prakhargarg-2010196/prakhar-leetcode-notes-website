@@ -1,25 +1,120 @@
-# Question Breakdown
+# 347. Top K Frequent Elements
+## Approaches
+- Counting using brute force of two loops:  **(O(N^2),O(N))**
+- Counting after sorting : **(O(NlogN),O(N))**
+- Count using hashmap and then returning using priority queue : **(O(NlogK),O(N))** where K is the number of elements that are unique or to be sorted using priority queue
 
-<!-- Questions coming to head while reading the problem statement -->
+## Solution using Brute force of two loops
+```cpp
+class Solution {
+public:
+    static bool comp(const pair<int, int>& a, const pair<int, int>& b) {
+        return b.second < a.second;
+    }
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        vector<int> seen;
+        int n = nums.size();
+        int count = 1;
+        vector<pair<int, int>> countArray;
+        for (int i = 0; i < n; i++) {
+            count = 1;
+            if (find(seen.begin(), seen.end(), nums[i]) == seen.end()) {
+                for (int j = i + 1; j < n; j++) {
+                    if (nums[i] == nums[j]) {
+                        count++;
+                        seen.push_back(nums[i]);
+                        // The element is now marked as seen or visited.
+                    }
+                }
+                countArray.push_back({nums[i], count});
+            }
+        }
+        sort(countArray.begin(), countArray.end(), comp);
 
-<!-- As occurence is considered, then how to count the occurences? -->
-## [Counting the Occurences](https://stackoverflow.com/a/28511600/15645824)
+        vector<int> result(k);
+        for (int i = 0; i < k; i++) {
+            result[i] = countArray[i].first;
+        }
+        return result;
+    }
+};
+```
+## Solution using counting and sorting
+```cpp
+class Solution {
+public:
+    static bool comp(const pair<int, int>& a, const pair<int, int>& b) {
+        return b.second < a.second;
+    }
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        int n = nums.size();            // Size of the array
+        sort(nums.begin(), nums.end()); // REQUIRED
+        vector<pair<int, int>> countArray;
+        int count = 1;
+        for (int i = 0; i < n; i++) {
+            if (i < n - 1) {
+                if (nums[i] == nums[i + 1]) {
+                    count++;
+                } else {
+                    countArray.push_back({nums[i], count});
+                    count = 1;
+                }
+            } else {
+                countArray.push_back({nums[i], count});
+            }
+        }
 
-1. I can do counting the simple way by taking the array of counts (with all the elements initially set to zero).
-Then take the element of original array as index in the count array and increment the count of element.
-Problem: The problem with this method is that it allocates static array and doesn't reallocates memory when size of original array increases or decreases.
-Although malloc and realloc can be used to solve the above problem stated.I would still prefer to use map for this.
+        for (auto& it : countArray) {
+            cout << it.first << " " << it.second << endl;
+        }
 
-2. Using map
-Take the count of the array elements using a map of key-count pair using mp[element]++ syntax.
+        sort(countArray.begin(), countArray.end(), comp);
+        for (auto& it : countArray) {
+            cout << it.first << " " << it.second << endl;
+        }
 
-<!-- I have got the count and now I want to get the most occurence one-->
+        vector<int> result(k);
+        for (int i = 0; i < k; i++) {
+            result[i] = countArray[i].first;
+        }
+        return result;
+    }
+};
+```
 
-1. The first thought that came to my head was to use ordered map to this but that won't work as we have to do a lot of work to implement even if its sorted in that way.
 
-2. Second thought is of using another array to store the reversed pair from the hashmap just created and then sort the pairs using comparator function
-(O(nlogn)). Its simple approach but kind of off our time complexity.(brute force) or as found with another solution from [here](https://stackoverflow.com/a/2699091/15645824) we can use another mutimap (as two elements count can be same too) for solving this problem of sorting.
 
-3. Use a heap data structure (using priority_queue)
+## Use a heap data structure (using priority_queue)
+```cpp
+typedef pair<int, int> pi;
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        vector<int> result;
+        unordered_map<int, int>
+            countMap; // for storing frequency of each element
+        priority_queue<pi, vector<pi>, greater<pi>> sortedfreq;
+        for (auto& it : nums) {
+            countMap[it]++;
+        }
 
-4. Use bucket sort
+        // Arranging elements in priority queue
+        for (auto& it : countMap) {
+            sortedfreq.push(
+                {it.second,
+                 it.first}); // Putting the element according to which we
+                             // want to sort as the first element
+        }
+        //Check and pop the pairs which are not to be included as they are smaller counts
+        while (sortedfreq.size() > k) 
+            sortedfreq.pop();
+        
+        // push into result array
+        while (!sortedfreq.empty()) {
+            result.push_back(sortedfreq.top().second);
+            sortedfreq.pop();
+        }
+        return result;
+    }
+};
+```
