@@ -7,12 +7,12 @@ const config: Config = {
   tagline: 'This would be a repository for future reference of me and others who want to learn DSA and want to look into the thought process that goes into solving problems on leetcode',
 
   // Set the production url of your site here
-  url: 'https://prakhar-solves-leetcode.vercel.app/',
+  url: 'https://prakhar-leetcode-notes.vercel.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  // onBrokenLinks: 'throw',
+  // onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
