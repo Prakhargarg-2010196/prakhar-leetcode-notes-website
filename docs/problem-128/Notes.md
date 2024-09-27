@@ -72,7 +72,7 @@ public:
                 if (nums[i - 1] + 1 == nums[i]) {
                     length++;
                 } else
-                    length = 1;// To set the length to 1 if the nums are not consecutive
+                    length = 1;// To set the length to 1 if the nums are not consecutive to reset the length while calculating new 
                 maxLength = max(length, maxLength);// To calculate the max each time
             }
         }
@@ -87,30 +87,31 @@ public:
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        int maxLength = 0;
-        unordered_map<int, bool> mp;
-        for (int i = 0; i < nums.size(); i++) {
-            mp[nums[i]] = true;
+        if (nums.size() == 0) {
+            return 0;
         }
-        // Filtering the non traversable elements
-        for (int i = 0; i < nums.size(); i++) {
-            if (mp.find(nums[i] - 1) != mp.end()) {
-                // Because if once previous exists there is no need to travere
-                // the next one each time
-                mp[nums[i]] = false;
+        if (nums.size() == 1) {
+            return 1;
+        }
+        unordered_map<int,bool>mp;// To store the elements'check that are needed to be traversed
+        for(auto&it:nums){
+            mp[it]=true;
+        }
+        //Now turn all those elements to false which don't require to be checked 
+        for(int i=0;i<nums.size();i++){
+            if(mp.count(nums[i]-1)>0){
+                mp[nums[i]]=false; // this is to make sure the elements whose previous elements already exist don't get re-traversed.
             }
         }
-        for (int i = 0; i < nums.size(); i++) {
-            int count = 0;
-            int current = nums[i];
-            int j = 0;
-            if (mp[nums[i]] == true) {
-                // To find the next element to the current element add the index where you want to reach for that you need a separate index
-                while (mp.find(current + j) != mp.end()) {
-                    count++;
-                    j++;
+        int maxLength=0;
+        //Now calculate the maxLength
+        for(int i=0;i<nums.size();i++){
+            if(mp[nums[i]]==true){
+                int length=0;
+                while(mp.find(nums[i]+length)!=mp.end()){
+                    length++;
                 }
-                maxLength = max(count, maxLength);
+                maxLength=max(maxLength,length);
             }
         }
         return maxLength;
