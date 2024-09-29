@@ -1,6 +1,6 @@
 # Valid Parentheses
 
-# Brute force
+## Brute force
 
 ```cpp
 class Solution {
