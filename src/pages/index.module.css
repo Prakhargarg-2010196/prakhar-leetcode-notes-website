@@ -2,10 +2,11 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
+@import url('../css/custom.css');
 
 .heroBanner {
   padding: 4rem 0;
-  text-align: center;
+  text-align: justify;
   position: relative;
   overflow: hidden;
 }
