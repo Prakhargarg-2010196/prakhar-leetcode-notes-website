@@ -1,5 +1,5 @@
 ---
-title:
+title: ""
 ---
 # Markdown page example
 
