@@ -32,7 +32,7 @@ for visualization indexBox  here
 ```
 
 - We can also use the key of the grid hashmap as a pair of `{i/3,j/3}` or we can use set to represent like this [solution](https://leetcode.com/problems/valid-sudoku/discuss/15472/Short%2BSimple-Java-using-Strings)
-
+- [One visualisation of sudoku check](https://docs.google.com/spreadsheets/d/1f3fdAJ4xsABHr0WKaz_gQluNeutPPu5gRh1GZDohG7g/edit?usp=sharing)
 
 ## Brute Force 
 ```cpp
